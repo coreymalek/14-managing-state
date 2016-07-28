@@ -8,7 +8,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-  // This method loads by the id given when. It's execution path is /article/:id.
+  // This method loads the rest of the article where the 'Read On' link has been clicked. It's execution path is /article/:id.
   articlesController.loadById = function(ctx, next) {
     var articleData = function(article) {
       ctx.articles = article;
@@ -19,7 +19,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-  // This method loads by the author. It's execution path is /author/:authorName.
+  // This method loads all articles by the author that is selected in the author filter. It's execution path is /author/:authorName.
   articlesController.loadByAuthor = function(ctx, next) {
     var authorData = function(articlesByAuthor) {
       ctx.articles = articlesByAuthor;
@@ -32,7 +32,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-  // This method loads by the category. It's execution path is /article/:categoryName.
+  // This method loads all articles by the category that is selected in the category filter. It's execution path is /article/:categoryName.
   articlesController.loadByCategory = function(ctx, next) {
     var categoryData = function(articlesInCategory) {
       ctx.articles = articlesInCategory;
@@ -43,7 +43,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-  // This method loads all of the articles. It's execution path is /.
+  // This method loads all articles on initial page load, when no filters have been selected. It's execution path is / (root directory).
   articlesController.loadAll = function(ctx, next) {
     var articleData = function(allArticles) {
       ctx.articles = Article.all;
