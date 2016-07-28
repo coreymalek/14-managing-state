@@ -8,7 +8,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-  // This method loads by the id. It's execution path is /article/:id.
+  // This method loads by the id given when. It's execution path is /article/:id.
   articlesController.loadById = function(ctx, next) {
     var articleData = function(article) {
       ctx.articles = article;
@@ -43,7 +43,7 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
-  // This method loads all of the articles. It's execution path is /. 
+  // This method loads all of the articles. It's execution path is /.
   articlesController.loadAll = function(ctx, next) {
     var articleData = function(allArticles) {
       ctx.articles = Article.all;

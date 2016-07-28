@@ -13,6 +13,8 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  // It populates the filters on the header using the "#option-template" based on which articles are being displayed, and prevents duplicates.
+  // all routes will invoke this function via the articlesController.index function
   articleView.populateFilters = function() {
     var options,
       template = Handlebars.compile($('#option-template').text());
@@ -38,6 +40,8 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  // Updates what articles will be displayed based on the change in selected filter. It will then render a new page with a URL that contains the selected filter.
+  // all routes will invoke this function via the articlesController.index function
   articleView.handleFilters = function() {
     $('#filters').one('change', 'select', function() {
       var resource = this.id.replace('-filter', '');
@@ -118,6 +122,9 @@
   };
 
   // COMMENT: What does this method do?  What is it's execution path?
+  // this will show the articles for the selected author or category, and hide the sibling sections (about and stats). Then it will remove what is being displayed in the article section, and show related articles for what was selected.
+
+  // all routes will execute this function.
   articleView.index = function(articles) {
     $('#articles').show().siblings().hide();
 
